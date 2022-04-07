@@ -1,11 +1,11 @@
-from laser_scan import follow
-from laser_scan import nav_auto
+from sre_parse import State
+import follow
+import nav_auto
+import working_on_foxy
 
 def main():
-    print("Début")
+    print("Début Follow me")
     follow.follow()
-    print("appel nav")
-    nav_auto.nav_auto()
     print("fin nav")
 
 
