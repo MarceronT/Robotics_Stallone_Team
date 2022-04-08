@@ -302,21 +302,15 @@ class BasicNavigatorFoxy(Node):
         return
 
     def patrol_demo(self) :
-        security_route = [
-            [-0.138, 0.462],
-            [3.08, 2.6],
-            [2.46, -0.564],
-            [1.96, 0.591]]
         pose = PoseStamped()
         pose.header.frame_id = 'map'
         pose.header.stamp = self.get_clock().now().to_msg()
-        pose.pose.orientation.w = 1.0
-        for pt in security_route:
-            pose.pose.position.x = pt[0]
-            pose.pose.position.y = pt[1]
-            self.goToPose(pose)
-            while not self.isNavComplete():
-                time.sleep(0.1)
+        pose.pose.orientation.w = 0.00229
+        pose.pose.position.x = 9.06
+        pose.pose.position.y = -8.77
+        self.goToPose(pose)
+        while not self.isNavComplete():
+            time.sleep(0.1)
 
 
 def main() :
